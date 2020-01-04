@@ -1,7 +1,8 @@
 const $_port = 38010;
 
 module.exports = {
-  publicPath: '/',
+  publicPath: '/event4lover',
+  outputDir: 'docs',
   lintOnSave: false,
   productionSourceMap: false,
   devServer: {
