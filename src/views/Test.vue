@@ -84,16 +84,7 @@ export default {
     },
   },
   methods: {
-    onTyped($_str) {
-      this.isShowBtn = true;
-      this.$_debug_console_log(`onTyped[${this.index}] : ${$_str}`);
-    },
-    onErased($_str) {
-      this.$_debug_console_log(`onErased[${this.index}] : ${$_str}`);
-    },
-    onComplete() {
-      this.$_debug_console_log(`onComplete[${this.index}]`);
-
+    checkResult() {
       const $_qLen = this.questions.length;
       const $_theQuestion = this.questions[this.index];
 
@@ -113,13 +104,26 @@ export default {
         });
       }
     },
+    onTyped($_str) {
+      this.isShowBtn = true;
+      this.$_debug_console_log(`onTyped[${this.index}] : ${$_str}`);
+    },
+    onErased($_str) {
+      this.$_debug_console_log(`onErased[${this.index}] : ${$_str}`);
+    },
+    onComplete() {
+      this.$_debug_console_log(`onComplete[${this.index}]`);
+      this.checkResult();
+    },
     onClickTrueBtn() {
       this.$_debug_console_log(`onClickTrueBtn[${this.index}]`);
       this.nowAnswer = true;
+      this.checkResult();
     },
     onClickFalseBtn() {
       this.$_debug_console_log(`onClickFalseBtn[${this.index}]`);
       this.nowAnswer = false;
+      this.checkResult();
     },
   },
   created() {
