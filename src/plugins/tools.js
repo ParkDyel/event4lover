@@ -1,6 +1,11 @@
 export default {
   install(Vue, option) {
-    const $_debug = option.debug.toLowerCase() == 'true' ? true : false;
+    const $_debug =
+      option.debug != undefined
+        ? option.debug.toLowerCase() == 'true'
+          ? true
+          : false
+        : false;
     Vue.prototype.$_debug_isDebug = () => {
       return $_debug;
     };
