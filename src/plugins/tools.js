@@ -14,6 +14,9 @@ export default {
         return console.log(args);
       }
     };
+    Vue.prototype.$_deepCopy = $_object => {
+      return JSON.parse(JSON.stringify($_object));
+    };
     Vue.prototype.$_suffleArray = a => {
       if (Array.isArray(a)) {
         let j, x, i;

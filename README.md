@@ -5,6 +5,7 @@
 - change data source to vuex for save
 - css validation
 - admin function : edit string, iamge url
+- use TypeScript (wait until vue 3.0)
 
 ## Project setup
 
@@ -22,12 +23,6 @@ npm run serve
 
 ```bash
 npm run build
-```
-
-### Run your tests
-
-```bash
-npm run test
 ```
 
 ### Lints and fixes files
