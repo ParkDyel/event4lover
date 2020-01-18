@@ -1,6 +1,6 @@
 <template lang="pug">
 .present.full.dfc.jcc
-  .success(v-if="isPassed").full
+  .success.full(v-if="isPassed")
     .header 축 800 일!
     .slider-wrap
       vue-flux(v-if="isLoadImages" :options='vueFlux.options' :images='vueFlux.images' :transitions='["book"]' ref='slider')
@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return {
-      isPassed: this.$route.params > 8 ? true : false,
+      isPassed: this.$route.params.score > 8 ? true : false,
       isRequestRetry: false,
       isShowRetryBtn: false,
       isLoadImages: false,
@@ -118,13 +118,6 @@ export default {
 </script>
 
 <style scoped>
-.present {
-  width: 90%;
-  height: 90%;
-
-  padding: 5%;
-}
-
 .success .header {
   font-size: 40px;
   color: rgb(231, 255, 254);
@@ -133,6 +126,8 @@ export default {
 }
 
 .success .slider-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 40px 0;
 }
 
